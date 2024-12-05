@@ -34,7 +34,7 @@ app.get('/v1/drivers-info', (req, res) => {
 
 // Route for booking
 app.get(
-  '/v1/book/:pickup/:drop/:passengers/:time/:advanced/:date/:night/:noofautos/:hostel',
+  '/v1/getfare/:pickup/:drop/:passengers/:time/:advanced/:date/:night/:noofautos/:hostel',
   (req, res) => {
     try {
       const { pickup, drop, passengers, night, hostel } = req.params;
