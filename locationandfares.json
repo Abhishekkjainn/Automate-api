@@ -1,18 +1,5 @@
 [
   {
-    "pickup": "VITgate",
-    "drop": "Katpadi Railway station",
-    "2": "160",
-    "3": "210",
-    "4": "250",
-    "5": "300",
-    "N2": "210",
-    "N3": "260",
-    "N4": "300",
-    "N5": "350",
-    "dist": "3km"
-  },
-  {
     "pickup": "Katpadi Railway station",
     "drop": "VITgate",
     "2": "160",

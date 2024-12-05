@@ -6,7 +6,11 @@ const cors = require('cors');
 const drivers = require('./drivers.json');
 const locationandfares = require('./locationandfares.json');
 
-app.use(cors());
+app.use(
+  cors({
+    origin: '*', // Allow requests from all origins, or specify specific origins if needed
+  })
+);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
@@ -34,7 +38,7 @@ app.get('/v1/drivers-info', (req, res) => {
 
 // Route for booking
 app.get(
-  '/v1/getfare/:pickup/:drop/:passengers/:time/:advanced/:date/:night/:noofautos/:hostel',
+  '/v1/book/:pickup/:drop/:passengers/:time/:advanced/:date/:night/:noofautos/:hostel',
   (req, res) => {
     try {
       const { pickup, drop, passengers, night, hostel } = req.params;
