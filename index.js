@@ -114,6 +114,7 @@ app.get(
         isNight: isNight,
         isHostel: isHostel,
         perPerson: `${fare / numPassengers} Rs/-`,
+        platformFee: 15,
         status: 200,
         message: `Booking fare for ${numPassengers} passengers calculated successfully`,
       };
