@@ -8,7 +8,7 @@ const locationandfares = require('./locationandfares.json');
 
 app.use(
   cors({
-    origin: 'https://automateapi.vercel.app', // Allow requests from all origins, or specify specific origins if needed
+    origin: '*', // Allow requests from all origins, or specify specific origins if needed
   })
 );
 

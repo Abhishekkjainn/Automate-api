@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fare Information</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .fare-info {
+        margin-top: 20px;
+      }
+      .fare-info p {
+        font-size: 16px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ride Fare Information</h1>
+    <button onclick="fetchFareData()">Get Fare Info</button>
+
+    <div id="fareData" class="fare-info"></div>
+
+    <script>
+      // Function to fetch data from the API
+      function fetchFareData() {
+        fetch(
+          'https://automateapi.vercel.app/v1/fare/pickup=vitgate/drop=new%20bus%20stand/passengers=5/time=:time/advancebooking=:advanced/date=:date/night=true/noofautosrequired=0/fromhostel=true/'
+        )
+          .then((response) => response.json()) // Parse JSON response
+          .then((data) => {
+            if (data.status === 200) {
+              const fareInfo = data;
+              let fareHtml = `
+              <h2>Fare Details:</h2>
+              <p><strong>Pickup Location:</strong> ${fareInfo.pickup}</p>
+              <p><strong>Drop Location:</strong> ${fareInfo.drop}</p>
+              <p><strong>Fare:</strong> ${fareInfo.fare}</p>
+              <p><strong>Distance:</strong> ${fareInfo.distance}</p>
+              <p><strong>Passengers:</strong> ${fareInfo.passengers}</p>
+              <p><strong>Per Person:</strong> ${fareInfo.perPerson}</p>
+              <p><strong>Platform Fee:</strong> ${fareInfo.platformFee}</p>
+              <p><strong>Night Travel:</strong> ${
+                fareInfo.isNight ? 'Yes' : 'No'
+              }</p>
+              <p><strong>Hostel Surcharge:</strong> ${
+                fareInfo.isHostel ? 'Yes' : 'No'
+              }</p>
+            `;
+              document.getElementById('fareData').innerHTML = fareHtml;
+            } else {
+              document.getElementById('fareData').innerHTML =
+                '<p>Failed to fetch fare data.</p>';
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+            document.getElementById('fareData').innerHTML =
+              '<p>There was an error fetching the data.</p>';
+          });
+      }
+    </script>
+  </body>
+</html>
