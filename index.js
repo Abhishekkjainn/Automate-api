@@ -3,7 +3,6 @@ const app = express();
 const port = 3000;
 const cors = require('cors');
 const axios = require('axios');
-
 const drivers = require('./drivers.json');
 const locationandfares = require('./locationandfares.json');
 
