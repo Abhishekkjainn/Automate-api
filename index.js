@@ -289,6 +289,30 @@ app.get(
           }
         );
 
+        const dataupdate = {};
+        drivers.forEach((driver) => {
+          dataupdate[driver.id] = driver.id === req.params.driverid ? 1 : 0;
+        });
+        /*************  ✨ Codeium Command ⭐  *************/
+        dataupdate.Time = formattedDateTime;
+
+        /******  55116b3b-9912-4562-9e50-aa8329359989  *******/
+
+        console.log(dataupdate);
+
+        const googlesheetsResponse = await axios.post(
+          `	https://sheetdb.io/api/v1/t2ubs42lddol3`,
+          {
+            data: dataupdate,
+          },
+          {
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
         // Check the response from Telegram API
         if (telegramResponse.status === 200 && telegramResponse.data.ok) {
           res.status(200).json({
