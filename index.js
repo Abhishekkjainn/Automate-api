@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
       <h1>API Documentation</h1>
   
       <h2>Base URL</h2>
-      <p><code>http://localhost:3000</code></p>
+      <p><code>http://automateapi.vercel.app</code></p>
   
       <h2>Routes</h2>
   
@@ -113,7 +113,7 @@ app.get('/', (req, res) => {
   
       <div class="route">
           <h3>3. Book a Ride</h3>
-          <p><strong>Endpoint:</strong> <code>/v1/book/pickup=:pickup/drop=:drop/passengers=:passengers/time=:time/advancebooking=:advanced/date=:date/night=:night/noofautosrequired=:noofautos/fromhostel=:hostel/driverid=:driverid/finalfare=:finalfare</code></p>
+          <p><strong>Endpoint:</strong> <code>/v1/book/pickup=:pickup/drop=:drop/passengers=:passengers/time=:time/advancebooking=:advanced/date=:date/night=:night/noofautosrequired=:noofautos/fromhostel=:hostel/driverid=:driverid/finalfare=:finalfare/passengername=:passengername/passengerphone=:passengerphone</code></p>
           <p><strong>Method:</strong> GET</p>
           <p><strong>Request Parameters:</strong></p>
           <ul>
