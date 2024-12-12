@@ -476,6 +476,14 @@ app.get(
             message: 'Ride Booked Successfully and Notification Sent',
             fareVerfied: true,
             driver: getDriver(req.params.driverid),
+            pickup: req.params.pickup,
+            drop: req.params.drop,
+            passengers: req.params.passengers,
+            time: req.params.time,
+            date: req.params.date,
+            night: req.params.night,
+            hostel: req.params.hostel,
+            finalfare: req.params.finalfare,
           });
         } else {
           throw new Error('Failed to send Telegram message');
