@@ -282,7 +282,7 @@ function getDriver(driverid) {
   return driver;
 }
 app.get(
-  '/v1/book/pickup=:pickup/drop=:drop/passengers=:passengers/time=:time/advancebooking=:advanced/date=:date/night=:night/noofautosrequired=:noofautos/fromhostel=:hostel/driverid=:driverid/finalfare=:finalfare',
+  '/v1/book/pickup=:pickup/drop=:drop/passengers=:passengers/time=:time/advancebooking=:advanced/date=:date/night=:night/noofautosrequired=:noofautos/fromhostel=:hostel/driverid=:driverid/finalfare=:finalfare/passengername=:passengername/passengerphone=:passengerphone',
   async (req, res) => {
     // Normalize inputs and validate
     const pickupLower = req.params.pickup.toLowerCase();
@@ -292,6 +292,8 @@ app.get(
     const isHostel = req.params.hostel.toLowerCase() === 'true';
     const finalFare = parseInt(req.params.finalfare);
     const driverid = req.params.driverid;
+    const passengername = req.params.passengername;
+    const passengerphone = req.params.passengerphone;
 
     if (!pickupLower || !dropLower) {
       return res.status(400).json({
@@ -304,6 +306,13 @@ app.get(
       return res.status(400).json({
         status: 400,
         message: 'Passenger count must be a number between 1 and 5',
+      });
+    }
+
+    if (!passengername || !passengerphone) {
+      return res.status(400).json({
+        status: 400,
+        message: 'Passenger name and phone number must be provided',
       });
     }
 
@@ -416,7 +425,13 @@ app.get(
           ' Rs/-' +
           '\n' +
           'bookedTime: ' +
-          formattedDateTime;
+          formattedDateTime +
+          '\n' +
+          'Passenger Name: ' +
+          passengername +
+          '\n' +
+          'passengerphone: ' +
+          passengerphone;
 
         // Send the message to Telegram using the bot API
         const telegramResponse = await axios.post(
