@@ -13,7 +13,150 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send(`<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>API Documentation</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              background-color: #f4f4f9;
+              color: #333;
+              padding: 20px;
+          }
+          h1, h2 {
+              color: #444;
+          }
+          pre {
+              background: #eaeaea;
+              padding: 10px;
+              border-radius: 5px;
+              overflow-x: auto;
+          }
+          .route {
+              margin-bottom: 20px;
+          }
+          .status {
+              font-weight: bold;
+              color: green;
+          }
+          .error {
+              font-weight: bold;
+              color: red;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>API Documentation</h1>
+  
+      <h2>Base URL</h2>
+      <p><code>http://localhost:3000</code></p>
+  
+      <h2>Routes</h2>
+  
+      <div class="route">
+          <h3>1. Get All Drivers</h3>
+          <p><strong>Endpoint:</strong> <code>/v1/drivers-info</code></p>
+          <p><strong>Method:</strong> GET</p>
+          <p><strong>Response:</strong></p>
+          <pre>{
+      "drivers": [...],
+      "status": 200,
+      "message": "Drivers retrieved successfully"
+  }</pre>
+          <p><strong>Error:</strong></p>
+          <pre class="error">{
+      "status": 404,
+      "message": "No drivers found"
+  }</pre>
+      </div>
+  
+      <div class="route">
+          <h3>2. Get Fare for a Booking</h3>
+          <p><strong>Endpoint:</strong> <code>/v1/fare/pickup=:pickup/drop=:drop/passengers=:passengers/time=:time/advancebooking=:advanced/date=:date/night=:night/noofautosrequired=:noofautos/fromhostel=:hostel</code></p>
+          <p><strong>Method:</strong> GET</p>
+          <p><strong>Request Parameters:</strong></p>
+          <ul>
+              <li><code>pickup</code>: Pickup location (string)</li>
+              <li><code>drop</code>: Drop location (string)</li>
+              <li><code>passengers</code>: Number of passengers (1-5)</li>
+              <li><code>time</code>: Booking time (string)</li>
+              <li><code>advanced</code>: Advanced booking (true/false)</li>
+              <li><code>date</code>: Booking date (string)</li>
+              <li><code>night</code>: Night booking (true/false)</li>
+              <li><code>noofautos</code>: Number of autos required (integer)</li>
+              <li><code>hostel</code>: From hostel (true/false)</li>
+          </ul>
+          <p><strong>Response:</strong></p>
+          <pre>{
+      "pickup": "Location A",
+      "drop": "Location B",
+      "fare": "100 Rs/-",
+      "distance": "5 km",
+      "passengers": 2,
+      "isNight": false,
+      "isHostel": false,
+      "perPerson": "50 Rs/-",
+      "platformFee": 15,
+      "status": 200,
+      "message": "Booking fare for 2 passengers calculated successfully"
+  }</pre>
+          <p><strong>Error:</strong></p>
+          <pre class="error">{
+      "status": 404,
+      "message": "Route not found between Location A and Location B"
+  }</pre>
+      </div>
+  
+      <div class="route">
+          <h3>3. Book a Ride</h3>
+          <p><strong>Endpoint:</strong> <code>/v1/book/pickup=:pickup/drop=:drop/passengers=:passengers/time=:time/advancebooking=:advanced/date=:date/night=:night/noofautosrequired=:noofautos/fromhostel=:hostel/driverid=:driverid/finalfare=:finalfare</code></p>
+          <p><strong>Method:</strong> GET</p>
+          <p><strong>Request Parameters:</strong></p>
+          <ul>
+              <li><code>pickup</code>: Pickup location (string)</li>
+              <li><code>drop</code>: Drop location (string)</li>
+              <li><code>passengers</code>: Number of passengers (1-5)</li>
+              <li><code>time</code>: Booking time (string)</li>
+              <li><code>advanced</code>: Advanced booking (true/false)</li>
+              <li><code>date</code>: Booking date (string)</li>
+              <li><code>night</code>: Night booking (true/false)</li>
+              <li><code>noofautos</code>: Number of autos required (integer)</li>
+              <li><code>hostel</code>: From hostel (true/false)</li>
+              <li><code>driverid</code>: Driver ID (integer)</li>
+              <li><code>finalfare</code>: Final fare (integer)</li>
+          </ul>
+          <p><strong>Response:</strong></p>
+          <pre>{
+      "status": 200,
+      "message": "Ride Booked Successfully and Notification Sent",
+      "fareVerfied": true,
+      "driver": {
+          "id": 1,
+          "name": "Driver Name"
+      }
+  }</pre>
+          <p><strong>Error:</strong></p>
+          <pre class="error">{
+      "status": 400,
+      "message": "Final fare (150) does not match the calculated fare (140)",
+      "fareVerfied": false
+  }</pre>
+      </div>
+  
+      <h2>Error Handling</h2>
+      <p>All errors include a <code>status</code> code and a descriptive <code>message</code>. Common error codes:</p>
+      <ul>
+          <li><code>400</code>: Bad request (e.g., missing or invalid parameters)</li>
+          <li><code>404</code>: Not found (e.g., route or driver not found)</li>
+          <li><code>500</code>: Internal server error</li>
+      </ul>
+  </body>
+  </html>
+  `);
 });
 
 // Route for getting driver information
@@ -293,10 +436,8 @@ app.get(
         drivers.forEach((driver) => {
           dataupdate[driver.id] = driver.id === req.params.driverid ? 1 : 0;
         });
-        /*************  ✨ Codeium Command ⭐  *************/
-        dataupdate.Time = formattedDateTime;
 
-        /******  55116b3b-9912-4562-9e50-aa8329359989  *******/
+        dataupdate.Time = formattedDateTime;
 
         console.log(dataupdate);
 
