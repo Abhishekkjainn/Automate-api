@@ -522,3 +522,118 @@ app.get(
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+// [
+//   {
+//     "name": "Anand S",
+//     "email": "anandS@gmail.com",
+//     "phone": "987654321",
+//     "image": "image link",
+//     "id": "A1",
+//     "status": "available",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Ramesh S",
+//     "email": "rameshS@gmail.com",
+//     "phone": "9876543210",
+//     "image": "image link",
+//     "id": "A2",
+//     "status": "occupied",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Suresh S",
+//     "email": "sureshS@gmail.com",
+//     "phone": "9876543211",
+//     "image": "image link",
+//     "id": "A3",
+//     "status": "available",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Rakesh S",
+//     "email": "rakeshS@gmail.com",
+//     "phone": "9876543212",
+//     "image": "image link",
+//     "id": "A4",
+//     "status": "occupied",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Mahesh S",
+//     "email": "maheshS@gmail.com",
+//     "phone": "9876543213",
+//     "image": "image link",
+//     "id": "A5",
+//     "status": "available",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Rahul S",
+//     "email": "rahulS@gmail.com",
+//     "phone": "9876543214",
+//     "image": "image link",
+//     "id": "A6",
+//     "status": "occupied",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Rohan S",
+//     "email": "rohanS@gmail.com",
+//     "phone": "9876543215",
+//     "image": "image link",
+//     "id": "A7",
+//     "status": "available",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   },
+//   {
+//     "name": "Ramesh S",
+//     "email": "rameshS@gmail.com",
+//     "phone": "9876543216",
+//     "image": "image link",
+//     "id": "A8",
+//     "status": "occupied",
+//     "license": "123ABC123ABC",
+//     "Autono": "123ABC123ABC",
+//     "vehicle": "Tata Tuktuk",
+//     "age": 54,
+//     "gender": "male",
+//     "address": "Delhi"
+//   }
+// ]
