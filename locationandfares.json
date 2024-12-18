@@ -40,6 +40,19 @@
   },
   {
     "pickup": "VITgate",
+    "drop": "Chittoor Bus stand",
+    "2": "150",
+    "3": "200",
+    "4": "250",
+    "5": "300",
+    "N2": "200",
+    "N3": "250",
+    "N4": "300",
+    "N5": "350",
+    "dist": "3km"
+  },
+  {
+    "pickup": "VITgate",
     "drop": "Green Circle",
     "2": "300",
     "3": "350",
@@ -116,19 +129,7 @@
     "N5": "950",
     "dist": "15km"
   },
-  {
-    "pickup": "VITgate",
-    "drop": "Chittoor Bus stand",
-    "2": "150",
-    "3": "200",
-    "4": "250",
-    "5": "300",
-    "N2": "200",
-    "N3": "250",
-    "N4": "300",
-    "N5": "350",
-    "dist": "3km"
-  },
+
   {
     "pickup": "VITgate",
     "drop": "Vellore Fort",
