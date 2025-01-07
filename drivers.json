@@ -1,17 +1,17 @@
 [
   {
-    "name": "Anand S",
+    "name": "Chandramani Joshua",
     "email": "jainabhishek1904@gmail.com",
-    "phone": "7338824132",
-    "image": "https://firebasestorage.googleapis.com/v0/b/livit-1904.appspot.com/o/files%2FIMG-20241218-WA0009.jpg?alt=media&token=54845f22-2b8b-4d52-8a24-f3c0413471ab",
-    "id": "A1",
+    "phone": "8825844640",
+    "image": "https://firebasestorage.googleapis.com/v0/b/livit-1904.appspot.com/o/files%2FIMG-20241218-WA0007.jpg?alt=media&token=dfe85beb-a054-450b-83e7-c9ed220dc42e",
+    "id": "A3",
     "status": "available",
-    "license": "NOT THERE",
-    "Autono": "TN23 BF 8709",
-    "vehicle": "Autoricksahw",
-    "age": 38,
-    "gender": "male",
-    "address": "Bangalore, Karnataka"
+    "license": "TS08EF3456",
+    "Autono": "TN23 DF 9570",
+    "vehicle": "Autorickshaw",
+    "age": 42,
+    "gender": "Male",
+    "address": "Katpadi, Vellore"
   },
   {
     "name": "Gopal",
@@ -27,20 +27,7 @@
     "gender": "male",
     "address": "Katpadi, Vellore"
   },
-  {
-    "name": "Chandramani Joshua",
-    "email": "jainabhishek1904@gmail.com",
-    "phone": "8825844640",
-    "image": "https://firebasestorage.googleapis.com/v0/b/livit-1904.appspot.com/o/files%2FIMG-20241218-WA0007.jpg?alt=media&token=dfe85beb-a054-450b-83e7-c9ed220dc42e",
-    "id": "A3",
-    "status": "available",
-    "license": "TS08EF3456",
-    "Autono": "TN23 DF 9570",
-    "vehicle": "Autorickshaw",
-    "age": 42,
-    "gender": "Male",
-    "address": "Katpadi, Vellore"
-  },
+
   {
     "name": "Vinoth",
     "email": "jainabhishek1904@gmail.com",

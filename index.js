@@ -522,3 +522,18 @@ app.get(
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+// {
+//   "name": "Anand S",
+//   "email": "jainabhishek1904@gmail.com",
+//   "phone": "7338824132",
+//   "image": "https://firebasestorage.googleapis.com/v0/b/livit-1904.appspot.com/o/files%2FIMG-20241218-WA0009.jpg?alt=media&token=54845f22-2b8b-4d52-8a24-f3c0413471ab",
+//   "id": "A1",
+//   "status": "available",
+//   "license": "NOT THERE",
+//   "Autono": "TN23 BF 8709",
+//   "vehicle": "Autoricksahw",
+//   "age": 38,
+//   "gender": "male",
+//   "address": "Bangalore, Karnataka"
+// },
