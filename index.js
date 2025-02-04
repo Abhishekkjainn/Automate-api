@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -11,6 +12,17 @@ app.use(
     origin: ['https://automatevellore.vercel.app', 'http://localhost:5173'],
   })
 );
+
+const projectId = process.env.GOOGLE_PROJECT_ID;
+const privateKeyId = process.env.GOOGLE_PRIVATE_KEY_ID;
+const privateKey = process.env.GOOGLE_PRIVATE_KEY;
+const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+const clientId = process.env.GOOGLE_CLIENT_ID;
+const authUri = process.env.GOOGLE_AUTH_URI;
+const tokenUri = process.env.GOOGLE_TOKEN_URI;
+const authProviderCertUrl = process.env.GOOGLE_AUTH_PROVIDER_X509_CERT_URL;
+const clientCertUrl = process.env.GOOGLE_CLIENT_X509_CERT_URL;
+const universeDomain = process.env.GOOGLE_UNIVERSE_DOMAIN;
 
 app.get('/', (req, res) => {
   res.send(`<!DOCTYPE html>
