@@ -8,7 +8,7 @@ const locationandfares = require('./locationandfares.json');
 
 app.use(
   cors({
-    origin: 'https://automatevellore.vercel.app',
+    origin: ['https://automatevellore.vercel.app', 'http://localhost:5173'],
   })
 );
 
