@@ -10,7 +10,11 @@ const { db } = require('./firebase');
 
 app.use(
   cors({
-    origin: ['https://automatevellore.vercel.app', 'http://localhost:5173'],
+    origin: [
+      'https://automatevellore.vercel.app',
+      'http://localhost:5173',
+      'https://automatedrivers.vercel.app',
+    ],
   })
 );
 
