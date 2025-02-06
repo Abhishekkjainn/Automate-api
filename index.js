@@ -8,15 +8,7 @@ const drivers = require('./drivers.json');
 const locationandfares = require('./locationandfares.json');
 const { db } = require('./firebase');
 
-app.use(
-  cors({
-    origin: [
-      'https://automatevellore.vercel.app',
-      'http://localhost:5173',
-      'https://automatedrivers.vercel.app',
-    ],
-  })
-);
+app.use(cors());
 
 const projectId = process.env.GOOGLE_PROJECT_ID;
 const privateKeyId = process.env.GOOGLE_PRIVATE_KEY_ID;
