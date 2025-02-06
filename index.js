@@ -159,6 +159,33 @@ app.get('/', (req, res) => {
 //   }
 // });
 
+// app.get('/v1/drivers-info', async (req, res) => {
+//   try {
+//     // Fetch drivers collection from Firestore
+//     const driversSnapshot = await db.collection('Drivers').get();
+
+//     if (driversSnapshot.empty) {
+//       return res.status(404).json({ status: 404, message: 'No drivers found' });
+//     }
+
+//     // Map Firestore documents to driver objects
+//     const drivers = driversSnapshot.docs.map((doc) => doc.data());
+
+//     res.status(200).json({
+//       drivers,
+//       status: 200,
+//       message: 'Drivers retrieved successfully',
+//     });
+//   } catch (error) {
+//     console.error('Error fetching drivers:', error);
+//     res.status(500).json({
+//       status: 500,
+//       message: 'An error occurred while retrieving drivers',
+//       error: error.message,
+//     });
+//   }
+// });
+
 app.get('/v1/drivers-info', async (req, res) => {
   try {
     // Fetch drivers collection from Firestore
@@ -168,8 +195,10 @@ app.get('/v1/drivers-info', async (req, res) => {
       return res.status(404).json({ status: 404, message: 'No drivers found' });
     }
 
-    // Map Firestore documents to driver objects
-    const drivers = driversSnapshot.docs.map((doc) => doc.data());
+    // Map Firestore documents to driver objects and filter by status
+    const drivers = driversSnapshot.docs
+      .map((doc) => doc.data())
+      .filter((driver) => driver.status === true); // Only include drivers with status true
 
     res.status(200).json({
       drivers,
